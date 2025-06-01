@@ -6,6 +6,11 @@ describe("Movie tickets booking tests", () => {
   const HALL_URL = "https://qamid.tmweb.ru/client/hall.php";
   const PAYMENT_URL = "https://qamid.tmweb.ru/client/payment.php";
 
+  beforeEach(async () => {
+    await page.goto(BOOKING_URL);
+  
+  });
+
   test(`Booking 'Унесенные ветром.' in 'Зал 1' for 17:00 for tommorrow`, async () => {
     // Arrange
     const MOVIE = "Унесенные ветром.";
@@ -13,7 +18,6 @@ describe("Movie tickets booking tests", () => {
     const TIME = "17:00";
     const DAY_INDEX = 1; // завтра
 
-    await page.goto(BOOKING_URL);
     await selectDayByIndex(page, DAY_INDEX);
     await page.waitForSelector(".movie");
 
@@ -50,7 +54,6 @@ describe("Movie tickets booking tests", () => {
     const TIME = "20:00";
     const DAY_INDEX = 2; // послезавтра
 
-    await page.goto(BOOKING_URL);
     await selectDayByIndex(page, DAY_INDEX);
     await page.waitForSelector(".movie");
 
@@ -86,7 +89,6 @@ describe("Movie tickets booking tests", () => {
     const TIME = "00:00";
     const DAY_INDEX = 0; // сегодня
 
-    await page.goto(BOOKING_URL);
     await selectDayByIndex(page, DAY_INDEX);
     await page.waitForSelector(".movie");
 
