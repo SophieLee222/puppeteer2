@@ -1,4 +1,4 @@
-const { clickElement, getText, clickXPath, getXPathText, selectDayByIndex, selectFreeSeat, bookTickets } = require("./lib/commands.js");
+const { clickXPath, getXPathText, selectDayByIndex, selectFreeSeat, bookTickets } = require("./lib/commands.js");
 
 describe("Movie tickets booking tests", () => {
 
